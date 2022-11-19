@@ -11,7 +11,7 @@ if not exist Configs/ (
 if not exist Configs/LocalConfig.ini (
 	echo making default Local config
 	(
-		echo ProjectFile=..\AstroColony\AstroColony.uproject
+		echo ProjectFile=.\AudioTemplateEA.uproject
 		echo UnrealEngineLocation=C:\Program Files ^(x86^)\UE_4.27\
 		echo SteamInstall=C:\Program Files ^(x86^)\Steam\steamapps\common\Astro Colony\
 	) > Configs/LocalConfig.ini
@@ -28,11 +28,12 @@ if not exist Configs/PakWhiteList.ini (
 	echo making default PakWhiteList
 	(
 		echo ..\Content
+		echo ..\Content\_CustomSounds
 	) > Configs/PakWhiteList.ini
 )
 
 if not exist Configs/PakBlackList.ini (
-	echo making default PakBlackList
+	echo making default PakBlackList 
 	copy nul PakBlackList.ini 
 	move PakBlackList.ini Configs/PakBlackList.ini 
 )
